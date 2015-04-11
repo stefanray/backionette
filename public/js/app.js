@@ -30,29 +30,26 @@ $(document).ready(function(){
                 if (success) success(collection, resp, options);
 
                 collection.trigger('sync', collection, resp, options);
-
-                return this.sync('read', this, options);
             }
         },
 
         parse: function(data, resp) {
         
+            if(resp.data && resp.data.search) {
+                sessionStorage.setItem(resp.data.search, JSON.stringify(data))
+            }
             
             // massage different formats depending on search
             data = data.ancients || data;
 
-            var toRet = _.map(data, function(row) {
+            var parsed = _.map(data, function(row) {
+
                 row.name = row.name.toUpperCase();
-                row.end_of_an_era = moment(row.end_of_an_era).format("MMM Do YY")
+                row.end_of_an_era = moment(row.end_of_an_era).format("MMM Do YY");
                 return row;
             });
 
-
-            if(resp.data && resp.data.search) {
-                sessionStorage.setItem(resp.data.search, JSON.stringify(toRet))
-            }
-
-            return toRet;
+            return parsed;
          }
     });
 
