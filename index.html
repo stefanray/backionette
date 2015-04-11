@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html>
+	<head>
+
+		<title>Test App</title>
+
+		<script id="godTemplate" type="text/x-handlebars-template">
+			<h1>{{name}}</h1>
+			<p>
+				<strong>Superpower</strong>: {{superpower}}
+			</p>
+			<p>
+				<strong>End Of An Era</strong> {{end_of_an_era}}
+			</p>
+		</script>
+
+		<script id="noGodTemplate" type="text/x-handlebars-template">
+			<h1>No Gods Here!</h1>
+		</script>
+
+		<script id="errorTemplate" type="text/x-handlebars-template">
+			<h1>Seems to be something wrong:</h1>
+			<p>{{error}}</p>
+		</script>
+
+		<script id="godsTemplate" type="text/x-handlebars-template">
+			<div id="error"></div>
+			<div id="list"></div>
+		</script>
+
+		<script id="searchTemplate" type="text/x-handlebars-template">
+			Search: <input id="searchBox"></input> (Type 'error' to see an error)
+		</script>
+
+		<script id="appLayoutTemplate" type="text/x-handlebars-template">
+		 	<div id="search">1</div>
+			<div id="content">2</div>
+		</script>
+
+		<script src='js/vendor/jquery-1.11.2.js'></script>
+		<script src='js/vendor/underscore.js'></script>
+		<script src='js/vendor/backbone.js'></script>
+		<script src='js/vendor/backbone.marionette.js'></script>
+		<script src='js/vendor/handlebars-v3.0.1.js'></script>
+		<script src='js/vendor/moment.js'></script>
+
+		<script src='js/app.js'></script>
+
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+
+		
+		
+	</body>
+</html>
